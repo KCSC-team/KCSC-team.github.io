@@ -1,0 +1,47 @@
+@keyframes navHover {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+@keyframes memberHover {
+    from {
+        top: 40%;
+        opacity: 0;
+    }
+    
+    to {
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%);
+        opacity: 1;
+    }
+}
+
+
+@keyframes overlayHover {
+    from {
+        opacity: 0.001;
+        height: 0;
+    }
+    to {
+        opacity: 0.8;
+        height: 100%;
+    }
+}
+
+
+@keyframes activeNav {
+    from {
+        top: calc(100% - -20px);
+    }
+    to {
+        top: calc(100% - 3px);
+    }
+}
+
+

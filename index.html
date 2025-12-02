@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/asset/css/base.css">
-    <link rel="stylesheet" href="/asset/animation/animation.css">
-    <link rel="stylesheet" href="/asset/page-css/main-page/main-page.css">
+    <link rel="stylesheet" href="/asset/css/animation.css">
+    <link rel="stylesheet" href="/asset/css/pages/home.css">
     <title>KMA CYBER SECURITY CLUB</title>
     <link rel="icon" type="image/x-icon" href="/asset/img/club_logo.jpg">
     <link rel="stylesheet" href="/asset/css/responsive.css">
-    <script src="/page/common/rendering.js" type="module"></script>
+    <link rel="stylesheet" href="/asset/css/style.css">
+    <link rel="stylesheet" href="/asset/css/header.css">
+    <link rel="stylesheet" href="/asset/css/footer.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="/asset/js/components/rendering.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <div id="main">
@@ -19,26 +24,28 @@
         </div>
         <div id="content">
             <div class="slider">
-                <a class="history-btn main-page-btn" href="/page/about_us/about_us.html">LEARN MORE</a>
+                <div id="particles-js"></div>
+                <h1 class="main-title-typing"></h1>
+                <a class="history-btn main-page-btn" href="/about.html">LEARN MORE</a>
             </div>
             <div class="about">
-                <div class="about-containter">
+                <div class="about-containter" data-aos="fade-up">
                     <div class="about-logo">
                         <img src="/asset/img/club_logo.jpg" alt="">
                     </div>
                     <div class="about-content">
                         <p>KCSC was established by students Academy of cryptography techniques, creating an environment and playground for students who are passionate about information security in general and CTF in particular.</p>
-                        <a class="about-btn main-page-btn" href="/page/team_history/team_history.html">Detail</a>
+                        <a class="about-btn main-page-btn" href="/about.html">Detail</a>
                     </div>
                 </div>
             </div>
             <div class="members-overview">
                 <div class="member-container">
-                    <div class="member-title"><p>MEMBERS</p></div>
+                    <div class="member-title" data-aos="fade-right"><p class="glitch" data-text="MEMBERS">MEMBERS</p></div>
                     <div class="role-container">
-                        <a class="role-btn" href="/page/team_members/team_members.html#Former"><p>FORMER</p></a>
-                        <a class="role-btn" href="/page/team_members/team_members.html#Ctfer"><p>CTFER</p></a>
-                        <a class="role-btn" href="/page/team_members/team_members.html#Media"><p>MEDIA</p></a>
+                        <a class="role-btn" href="/members.html#Former" data-aos="zoom-in" data-tilt><p>FORMER</p></a>
+                        <a class="role-btn" href="/members.html#Ctfer" data-aos="zoom-in" data-aos-delay="200" data-tilt><p>CTFER</p></a>
+                        <a class="role-btn" href="/members.html#Media" data-aos="zoom-in" data-aos-delay="400" data-tilt><p>MEDIA</p></a>
                     </div>
                 </div>
             </div>
@@ -46,9 +53,32 @@
         <div id="footer">
         </div>
     </div>
-    <script src="/asset/page-js/main-page.js"></script>
-    <script src="/members/members.js"></script>
+    <script src="/asset/js/pages/home.js"></script>
+    <script src="/asset/js/particles-config.js"></script>
+    <script src="/asset/js/lib/vanilla-tilt.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        
+        
+        const text = "KMA CYBER SECURITY CLUB";
+        const typingElement = document.querySelector('.main-title-typing');
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                typingElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        
+        
+        window.onload = function() {
+            typeWriter();
+        };
+    </script>
     <script defer src="/asset/js/responsive.js"></script>
-    <script src="/page/common/Loading.js"></script>
+    <script src="/asset/js/components/Loading.js"></script>
 </body>
 </html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/asset/css/base.css" />
+    <link rel="stylesheet" href="/asset/css/animation.css" />
+    <link rel="icon" type="image/x-icon" href="/asset/img/club_logo.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="/asset/css/pages/members.css"
+    />
+    <link rel="stylesheet" href="/asset/css/responsive.css" />
+    <link rel="stylesheet" href="/asset/css/style.css" />
+    <link rel="stylesheet" href="/asset/css/header.css">
+    <link rel="stylesheet" href="/asset/css/footer.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="/asset/js/components/rendering.js" type="module"></script>
+    <title>TEAM MEMBERS</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="header"></div>
+      <div id="content">
+        <div class="title-container">
+          <h1 class="main-title glitch" data-text="MEMBERS">MEMBERS</h1>
+        </div>
+        <div class="content-container">
+          <div class="content-nav-container">
+            <div class="status-container">
+              <div class="all-btn op-btn">ALL</div>
+              <div class="active-btn op-btn">CURRENT</div>
+              <div class="content-nav-overlay"></div>
+            </div>
+            <div class="members-type-container">
+              <div class="op-btn ctfer-tab active">CTFER</div>
+              <div class="op-btn media-tab">MEDIA</div>
+              <div class="members-tab-overlay"></div>
+            </div>
+            <div class="category-container">
+              <li class="selected">
+                <p>YEARS</p>
+                <i class="fa-solid fa-arrow-right"></i>
+              </li>
+              <ul>
+                <li><p>2019</p></li>
+                <li><p>2020</p></li>
+                <li><p>2021</p></li>
+                <li><p>2022</p></li>
+                <li><p>2023</p></li>
+                <li><p>2024</p></li>
+              </ul>
+            </div>
+          </div>
+          <div class="members-tag">
+            <div class="members-container-all">
+              <div class="members-container"></div>
+              <div class="show-options" style="display: none;">
+                <div class="see-more">See more...</div>
+                <div class="see-all">See all</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer"></div>
+    </div>
+    <script defer src="/asset/js/responsive.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script type="module" src="/asset/js/pages/members.js"></script>
+    <script src="/asset/js/components/Loading.js"></script>
+  </body>
+</html>

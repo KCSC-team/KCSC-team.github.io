@@ -7,7 +7,7 @@
 }
 
 
-/* for pc */
+
 
 @media (min-width : 1024px) {
     #header i {
@@ -19,9 +19,9 @@
     }
 }
 
-/* ***** */
 
-/* for tablet */
+
+
 @media (max-width: 1023px) {
     body #header {
         height: 8%;
@@ -85,7 +85,7 @@
         transform: translateY(-50%);
     }
 
-    /* main page */
+    
     #content .role-container {
         padding: 0px;        
     }
@@ -102,50 +102,23 @@
     #content .about-containter p {
         font-size: 16px;
     }
-    /*  *****  */
-
-    .member {
-        width: calc(100% / 3);
-    }
-
     
 
-    .member-slogan div {
-        font-size: 14px;
-    }
-
-    .member-slogan p {
-        font-size: 12px;
-    }
-    .role {
-        font-size: 10px;
-    }
+    
 
     .nav-container ul > li {
         line-height: 2.5;
     }
     
-
-    .prize-item {
-        width: calc(100% / 3);
-    }
-
-
-    .prize-item .info h3 {
-        font-size: 13px;
-    }
-
-    .prize-item .info p {
-        font-size: 10px;
-    }
+    
 }
-/*   *****   */
 
-/* for mobile */
+
+
 
 @media (max-width: 739px) {
 
-    /* main page */
+    
     #content .slider .history-btn {
         font-size: 14px!important;  
         padding: 12px 24px;
@@ -172,6 +145,9 @@
     #content .slider {
         padding-bottom: 100%;
         margin-top: 60px;
+        background-size: cover;
+        background-position: center;
+        height: auto; 
     }
 
     #header .nav-container {
@@ -217,7 +193,8 @@
     }
 
     #content .about {
-        height: 240px;
+        height: auto; 
+        min-height: 240px;
     }
 
     #content .about-containter p {
@@ -226,20 +203,23 @@
 
 
     #content .about-containter {
-        padding: 10px 20px;
-        height: 180px;
+        padding: 20px;
+        height: auto; 
+        flex-direction: column; 
+        align-items: center;
     }
 
     #content .about-containter .about-content {
-        margin-left: 20px;
+        margin-left: 0;
         margin-top: 20px;
-        width: 70%;
+        width: 100%;
+        text-align: center;
     }
 
     #content .about-containter .about-logo {
-        width: 30%;
-        border-radius: 1px;
-        display: flex;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
     }
 
     #content .about-containter .about-logo img {
@@ -250,7 +230,10 @@
 
     #content .about-containter .about-btn {
         font-size: 12px;
-        padding: 12px 24px;
+        padding: 10px 20px;
+        position: static; 
+        margin-top: 15px;
+        display: inline-block;
     }
 
     #content .member-container {
@@ -262,7 +245,8 @@
     }
 
     #content .members-overview {
-        height: 240px;
+        height: auto; 
+        min-height: 240px;
     }
 
 
@@ -273,15 +257,15 @@
 
 
     #content .role-btn {
-        width: 100px;
-        height: 100px;
-        margin: 0 8px;
+        width: 80px;
+        height: 80px;
+        margin: 0 5px;
     }
 
     #content .role-btn p {
-        font-size: 18px;
+        font-size: 14px;
     }
-    /*   ******   */
+    
 
 
     .title-container {
@@ -289,10 +273,12 @@
     }
 
     .content-container {
-        padding: 20px 36px;
+        padding: 20px 15px; 
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .content-container ifame {
+    .content-container iframe {
         height: 170px;
     }
 
@@ -370,6 +356,7 @@
 
     .main-title {
         font-size: 30px;
+        word-wrap: break-word; 
     }
 
     .title-container {
@@ -415,60 +402,18 @@
         width: 100%;
     }
 
-    .member {
-        width: 50%;
-        padding: 12px;
-    }
-
-    .members-container {
-        margin: 0;
-    }
-
-
-
-    .member-slogan {
-        margin-top: 0;
-    }
-
-    .member .name {
-        margin-bottom: 12px;
-        font-size: 16px;
-    }
-
-    .member-slogan div {
-        margin-bottom: 4px;
-    }
-
-    .member-slogan p {
-        font-size: 10px;
-    }
-
-
-    .prize-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: left;
-        width: 100%;
-    }
     
-    
-    .prize-item {
-        width: calc(100% / 2);
-        padding: 12px;
-    }
-    
-    
-    .prize-item img {
-        width: 100%;
-    }
     
     .page {
         padding: 20px!important;
+        width: 25%; 
+        box-sizing: border-box;
     }
 
 
     #main .page-container {
         width: 400%;
+        display: flex; 
     }
 
     #main .prev-btn, #main .next-btn {
@@ -493,7 +438,7 @@
     }
 
     #main .page .title h1 {
-        font-size: 5rem;
+        font-size: 3rem;
         font-weight: 1000;
         color: var(--red);
         line-height: 1;
@@ -520,6 +465,11 @@
         font-size: 12px;
     }
 
+    .main-title-typing {
+        font-size: 2rem !important;
+        width: 90% !important;
+    }
+
 }
 
-/*  *******  */
+
