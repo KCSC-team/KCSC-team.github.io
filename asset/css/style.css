@@ -194,3 +194,12 @@ a:hover {
     color: var(--neon-blue);
     text-shadow: 0 0 5px var(--neon-blue);
 }
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 40px 0;
+}
