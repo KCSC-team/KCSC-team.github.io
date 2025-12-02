@@ -30,7 +30,7 @@
     text-align: center;
     z-index: 2;
     text-shadow: 0 0 10px rgba(0,0,0,0.5);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Inconsolata', monospace;
 }
 
 .main-title-typing::after {
@@ -43,7 +43,7 @@
     50% { opacity: 0; }
 }
 
-.slider .history-btn {
+.slider .learn-more-btn {
     position: absolute;
     z-index: 2;
     bottom: 25%;
@@ -61,7 +61,7 @@
 }
 
 
-.slider .history-btn:hover {
+.slider .learn-more-btn:hover {
     background-color: var(--red);
     color: white;
     animation: hover ease-out .3s;

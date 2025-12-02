@@ -23,12 +23,6 @@ var checkActive = {
             if(el) el.classList.add('active');
         }
     },
-    'history': {
-        render () {
-            const el = document.querySelector('.history');
-            if(el) el.classList.add('active');
-        }
-    },
     'achievement': {
         render () {
             const el = document.querySelector('.achievement');

@@ -1,7 +1,5 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
 :root {
     --neon-green: #0f0;
     --neon-blue: #00f3ff;
@@ -11,7 +9,7 @@
 }
 
 body {
-    font-family: 'Share Tech Mono', monospace !important;
+    font-family: 'Inconsolata', monospace !important;
     background-color: #a2214e; 
     color: #e0e0e0;
     overflow-x: hidden;
@@ -85,7 +83,7 @@ body {
     border: 2px solid var(--neon-blue);
     color: var(--neon-blue);
     padding: 10px 20px;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Inconsolata', monospace;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;

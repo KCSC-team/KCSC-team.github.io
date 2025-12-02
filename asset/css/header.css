@@ -44,7 +44,7 @@
 }
 
 .logo-text {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Inconsolata', monospace;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--white);
@@ -76,7 +76,7 @@
 }
 
 .nav-link {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Inconsolata', monospace;
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.8) !important;
     text-decoration: none;
