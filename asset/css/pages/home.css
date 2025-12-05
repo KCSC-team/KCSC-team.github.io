@@ -19,25 +19,6 @@
     z-index: 1;
 }
 
-.main-title-typing {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--white);
-    font-size: 4rem;
-    width: 100%;
-    text-align: center;
-    z-index: 2;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
-    font-family: 'Inconsolata', monospace;
-}
-
-.main-title-typing::after {
-    content: '|';
-    animation: blink 1s infinite;
-}
-
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }

@@ -25,7 +25,6 @@
         <div id="content">
             <div class="slider">
                 <div id="particles-js"></div>
-                <h1 class="main-title-typing"></h1>
                 <a class="learn-more-btn main-page-btn" href="/about.html">LEARN MORE</a>
             </div>
             <div class="about">
@@ -35,7 +34,7 @@
                     </div>
                     <div class="about-content">
                         <p>KCSC was established by students Academy of cryptography techniques, creating an environment and playground for students who are passionate about information security in general and CTF in particular.</p>
-                        <a class="about-btn main-page-btn" href="/about.html">Detail</a>
+                        <a class="about-btn main-page-btn" href="/about.html">Details</a>
                     </div>
                 </div>
             </div>
@@ -49,24 +48,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
-        
-        
-        const text = "KMA CYBER SECURITY CLUB";
-        const typingElement = document.querySelector('.main-title-typing');
-        let i = 0;
-        
-        function typeWriter() {
-            if (i < text.length) {
-                typingElement.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-        
-        
-        window.onload = function() {
-            typeWriter();
-        };
     </script>
     <script defer src="/asset/js/responsive.js"></script>
     <script src="/asset/js/components/Loading.js"></script>

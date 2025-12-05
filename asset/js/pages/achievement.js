@@ -1,6 +1,6 @@
 import list from "../data/achievementList.js";
 
-const achievementList = list();
+const achievementList = list().sort((a, b) => b.year - a.year);
 const root = document.querySelector(".container");
 
 const rendering = () => {

@@ -4,70 +4,25 @@ var members = membersList();
 const statusBar = document.querySelector(".status-container");
 const statusBarOverlay = statusBar.querySelector(".content-nav-overlay");
 const statusList = statusBar.querySelectorAll(".op-btn");
-const categoryContainer = document.querySelector(".category-container");
-const selecter = document.querySelector(".selected");
-const selectorValue = selecter.querySelector("p");
-const selecterBtn = selecter.querySelector("i");
-const optionsList = categoryContainer.querySelector("ul");
+
 const memberTeam = document.querySelector(".members-type-container");
 const teamList = memberTeam.querySelectorAll(".op-btn");
 const membersTeamOverlay = memberTeam.querySelector(".members-tab-overlay");
-const yearList = categoryContainer.querySelectorAll("ul > li");
+
+const categoryContainer = document.querySelector(".category-container");
+const selecter = document.querySelector(".selected");
+const selectorValue = selecter.querySelector("p");
+const genList = categoryContainer.querySelectorAll("ul > li");
+
 const memberContainer = document.querySelector(
   ".members-container-all .members-container"
 );
-const currentYear = new Date().getFullYear();
+
 const App = {
-  initState: false,
   init: {
-    type: "ALL",
-    year: 1,
-    role: "",
-  },
-  categoryShow(info) {
-    if (info) {
-      let formData = {
-        ...JSON.parse(localStorage.getItem("filters")),
-        role: info,
-      };
-      localStorage.setItem("filters", JSON.stringify(formData));
-    } else {
-      let formData = {
-        ...JSON.parse(localStorage.getItem("filters")),
-        role: "CTFER",
-      };
-      localStorage.setItem("filters", JSON.stringify(formData));
-    }
-
-    memberTeam.style.display = "flex";
-    selecter.classList.add("active");
-    categoryContainer.classList.add("active");
-    selecterBtn.style.transform = "rotate(90deg)";
-  },
-  categoryHidden() {
-    selectorValue.innerText = "YEARS";
-    let formData = {
-      ...JSON.parse(localStorage.getItem("filters")),
-      role: "",
-      year: 1,
-    };
-    this.slideLeft(membersTeamOverlay);
-    localStorage.setItem("filters", JSON.stringify(formData));
-    memberTeam.style.display = "none";
-    selecter.classList.remove("active");
-    categoryContainer.classList.remove("active");
-    selecterBtn.style.transform = "rotate(0)";
-  },
-
-  categoryActive() {
-    selecter.classList.add("active");
-    categoryContainer.classList.add("active");
-    selecterBtn.style.transform = "rotate(90deg)";
-  },
-  categoryUnActive() {
-    selecter.classList.remove("active");
-    categoryContainer.classList.remove("active");
-    selecterBtn.style.transform = "rotate(0deg)";
+    status: "ADVISOR",
+    role: "All",
+    gen: "Gen",
   },
 
   slideRight(e) {
@@ -78,16 +33,20 @@ const App = {
     e.style.left = "0";
   },
 
-  render({ type }) {
-    if (type === "ALL") {
-      members.forEach((item) => {});
-    }
+  showFilters() {
+    memberTeam.style.display = "flex";
+    categoryContainer.style.display = "block";
+  },
+
+  hideFilters() {
+    memberTeam.style.display = "none";
+    categoryContainer.style.display = "none";
   },
 
   renderTemplate(item) {
     return `<div class="member" data-aos="fade-up">
               <div class="member-avt">
-                <img src="${item.img}">
+                <img src="${item.img}" onerror="this.src='/asset/img/members/default.png'">
               </div>
               <div class="menber-info">
                 <div class="name">${item.name}</div>
@@ -98,62 +57,43 @@ const App = {
               </div>
       </div>`;
   },
-  renderAllMems() {
-    return Array.from(members).map((item) => {
-      return this.renderTemplate(item);
-    });
-  },
 
-  renderCTF(year) {
-    const _this = this;
-    if (year != 1) {
-      return members.reduce((array, item) => {
-        let to;
-        if (item.to != "") {
-          to = "now" ? currentYear : parseInt(item.to);
-        } else {
-          to = 2021;
-        }
-        let from = parseInt(item.from);
-        if (item.team === "CTF" && from <= year && year <= to) {
-          array.push(_this.renderTemplate(item));
-        }
-        return array;
-      }, []);
-    } else {
-      return members.reduce((array, item) => {
-        if (item.team === "CTF") {
-          array.push(_this.renderTemplate(item));
-        }
-        return array;
-      }, []);
-    }
-  },
+  render() {
+    const filters = JSON.parse(localStorage.getItem("filters")) || this.init;
+    let filteredMembers = [];
 
-  renderMedia(year) {
-    const _this = this;
-    if (year != 1) {
-      return members.reduce((array, item) => {
-        let to;
-        if (item.to != "") {
-          to = "now" ? currentYear : parseInt(item.to);
-        } else {
-          to = 2021;
-        }
-        let from = parseInt(item.from);
-        if (item.team === "Media" && from <= year && year <= to) {
-          array.push(_this.renderTemplate(item));
-        }
-        return array;
-      }, []);
+    if (filters.status === "ADVISOR") {
+      filteredMembers = members.filter((m) => m.team === "Advisor");
+    } else if (filters.status === "FOUNDER") {
+      filteredMembers = members.filter((m) => m.team === "Founder");
     } else {
-      return members.reduce((array, item) => {
-        if (item.team === "Media") {
-          array.push(_this.renderTemplate(item));
+      filteredMembers = members.filter((m) => {
+        if (m.team === "Advisor") return false;
+        if (m.team === "Founder") return false;
+        const isGenMatch = filters.gen === "Gen" || m.gen == filters.gen;
+
+        let isRoleMatch = false;
+        if (filters.role === "All") {
+          isRoleMatch = true;
+        } else if (filters.role === "CTFER") {
+          isRoleMatch =
+            m.team === "CTF" ||
+            m.team === "KCSC" ||
+            (m.team === "Former" && !m.role.toLowerCase().includes("media"));
+        } else if (filters.role === "MEDIA") {
+          isRoleMatch =
+            m.team === "Media" ||
+            (m.team === "Former" && m.role.toLowerCase().includes("media"));
         }
-        return array;
-      }, []);
+
+        return isGenMatch && isRoleMatch;
+      });
     }
+
+    memberContainer.innerHTML = filteredMembers
+      .map((m) => this.renderTemplate(m))
+      .join("");
+    this.refreshAOS();
   },
 
   refreshAOS() {
@@ -167,49 +107,29 @@ const App = {
   handleStatus() {
     statusList.forEach((item) => {
       item.onclick = () => {
-        statusList.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-        let formData = {
-          ...JSON.parse(localStorage.getItem("filters")),
-          type: item.innerText,
-        };
-        localStorage.setItem("filters", JSON.stringify(formData));
-        if (item.innerText === "ALL") {
-          memberContainer.innerHTML = this.renderAllMems().join("");
-          this.slideLeft(statusBarOverlay);
-          this.categoryHidden();
+        statusList.forEach((i) => i.classList.remove("active"));
+        item.classList.add("active");
+
+        const status = item.innerText;
+
+        let formData = JSON.parse(localStorage.getItem("filters")) || this.init;
+
+        if (status === "ADVISOR" || status === "FOUNDER") {
+          this.hideFilters();
         } else {
-          memberContainer.innerHTML = this.renderCTF(1).join("");
-          this.categoryShow();
-          this.slideRight(statusBarOverlay);
+          this.showFilters();
+          formData.gen = "Gen";
+          selectorValue.innerText = "Gen";
+          
+          formData.role = "All";
+          teamList.forEach(btn => btn.classList.remove('active'));
+          if (membersTeamOverlay) membersTeamOverlay.style.opacity = '0';
         }
-        this.refreshAOS();
-      };
-    });
-  },
 
-  CustomRender() {
-    const { type, year, role } = JSON.parse(localStorage.getItem("filters"));
-    if (role === "CTFER") {
-      memberContainer.innerHTML = this.renderCTF(year).join("");
-    } else if (role === "MEDIA") {
-      memberContainer.innerHTML = this.renderMedia(year).join("");
-    }
-    this.refreshAOS();
-  },
-
-  handleYearSelector() {
-    yearList.forEach((item) => {
-      item.onclick = () => {
-        let value = item.querySelector("p").innerHTML;
-        let formData = {
-          ...JSON.parse(localStorage.getItem("filters")),
-          year: parseInt(value),
-        };
+        formData.status = status;
         localStorage.setItem("filters", JSON.stringify(formData));
-        this.CustomRender();
-        selectorValue.innerText = value;
-        this.categoryUnActive();
+
+        this.render();
       };
     });
   },
@@ -217,85 +137,84 @@ const App = {
   handleType() {
     teamList.forEach((item) => {
       item.onclick = () => {
-        teamList.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-        if (item.innerText === "MEDIA") {
-          memberContainer.innerHTML = App.renderMedia(1).join("");
-          this.slideRight(membersTeamOverlay);
-        } else {
-          memberContainer.innerHTML = App.renderCTF(1).join("");
-          this.slideLeft(membersTeamOverlay);
-        }
-        let formData = {
-          ...JSON.parse(localStorage.getItem("filters")),
-          role: item.innerText,
-        };
+        teamList.forEach((i) => i.classList.remove("active"));
+        item.classList.add("active");
+        if (membersTeamOverlay) membersTeamOverlay.style.opacity = '1';
+
+        const role = item.innerText;
+
+        let formData = JSON.parse(localStorage.getItem("filters")) || this.init;
+        formData.role = role;
         localStorage.setItem("filters", JSON.stringify(formData));
-        this.CustomRender();
-        
-        
-        
-        
-        
-        
+
+        this.render();
+      };
+    });
+  },
+
+  handleGenSelector() {
+    genList.forEach((item) => {
+      item.onclick = () => {
+        const gen = item.querySelector("p").innerText;
+        selectorValue.innerText = gen;
+
+        let formData = JSON.parse(localStorage.getItem("filters")) || this.init;
+        formData.gen = gen;
+        localStorage.setItem("filters", JSON.stringify(formData));
+
+        this.render();
+        categoryContainer.classList.remove("active");
       };
     });
   },
 
   handleSelecter() {
     selecter.onclick = () => {
-      selecter.classList.toggle("active");
-      if (selecter.classList.contains("active")) {
-        this.categoryActive();
-      } else {
-        this.categoryUnActive();
-      }
+      categoryContainer.classList.toggle("active");
     };
   },
 
-  checkLocalStorage() {
-    if (localStorage.getItem("filters")) {
-    } else {
-      localStorage.setItem("filters", JSON.stringify(this.init));
-    }
-    const { type, year, role } = JSON.parse(localStorage.getItem("filters"));
-    if (type != "ALL") {
-      this.slideRight(statusBarOverlay);
-      if (role === "MEDIA") {
-        this.categoryActive();
-        this.categoryShow(role);
-        this.slideRight(membersTeamOverlay);
-        memberContainer.innerHTML = App.renderMedia(1).join("");
-      } else if (role === "CTFER") {
-        this.categoryActive();
-        this.categoryShow(role);
-        this.slideLeft(membersTeamOverlay);
-        memberContainer.innerHTML = App.renderCTF(1).join("");
-      }
-    } else {
-      memberContainer.innerHTML = App.renderAllMems().join("");
-    }
-  },
   start() {
-    this.checkLocalStorage();
-    App.handleStatus();
-    App.handleSelecter();
-    App.handleType();
-    App.handleYearSelector();
-    setTimeout(() => {
-      if (window.AOS) {
-        window.AOS.refresh();
+    localStorage.setItem("filters", JSON.stringify(this.init));
+    let filters = this.init;
+
+    statusList.forEach((btn) => {
+      if (btn.innerText === filters.status) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
       }
-    }, 500);
+    });
+
+    if (filters.status === "ADVISOR" || filters.status === "FOUNDER") {
+      this.hideFilters();
+    } else {
+      this.showFilters();
+
+      teamList.forEach((btn) => {
+        if (btn.innerText === filters.role) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+
+      if (filters.role === "All") {
+        if (membersTeamOverlay) membersTeamOverlay.style.opacity = '0';
+      } else {
+        if (membersTeamOverlay) membersTeamOverlay.style.opacity = '1';
+      }
+
+      selectorValue.innerText = filters.gen;
+    }
+
+    this.handleStatus();
+    this.handleType();
+    this.handleGenSelector();
+    this.handleSelecter();
+    this.render();
   },
 };
 
 App.start();
-window.onbeforeunload = () => {
-  let init = {
-    type: "ALL",
-    year: 1,
-    role: "",
-  };
-  localStorage.setItem("filters", JSON.stringify(init));
-};
+
