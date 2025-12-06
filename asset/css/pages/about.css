@@ -8,9 +8,17 @@
 
 #content .content-container {
     width: 100%;
-    padding: 40px 10%;
+    padding: 10px 10% 40px; /* Reduced top padding */
     max-width: 1600px;
     margin: 0 auto;
+}
+
+.title-container {
+    padding: 10px 0 !important; /* Reduced padding */
+}
+
+.content-title {
+    margin-bottom: 10px;
 }
 
 
