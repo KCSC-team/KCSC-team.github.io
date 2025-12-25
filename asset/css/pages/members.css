@@ -44,7 +44,8 @@
     background: rgba(0, 243, 255, 0.05);
     border: 1px solid var(--neon-blue);
     color: var(--neon-blue);
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -92,7 +93,8 @@
     background: rgba(0, 255, 0, 0.05);
     border: 1px solid var(--neon-green);
     color: var(--neon-green);
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     cursor: pointer;
     clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
     transition: all 0.3s ease;
@@ -128,7 +130,8 @@
     cursor: pointer;
     transition: all 0.2s;
     border-bottom: 1px solid rgba(0, 255, 0, 0.1);
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
 }
 
 .category-container ul li:hover {
@@ -239,7 +242,8 @@
 }
 
 .name {
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     font-size: 1.4rem;
     color: var(--neon-green);
     margin-bottom: 10px;
@@ -249,7 +253,8 @@
 }
 
 .role {
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     font-size: 1rem;
     color: var(--white);
     text-transform: uppercase;
@@ -301,7 +306,8 @@
 
 .loading-bar h2 {
     color: var(--neon-green);
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     margin-bottom: 10px;
     animation: blink 1s infinite;
 }

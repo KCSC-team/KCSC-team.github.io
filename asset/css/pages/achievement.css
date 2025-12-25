@@ -25,7 +25,8 @@
 }
 
 .prize-tag h2 {
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     font-size: 2.5rem;
     color: var(--neon-blue);
     text-shadow: 0 0 10px var(--neon-blue);
@@ -146,7 +147,8 @@
 }
 
 .info h3.title {
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     color: var(--neon-green);
     font-size: 1.2rem;
     margin-bottom: 15px;

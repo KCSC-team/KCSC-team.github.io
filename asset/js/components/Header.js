@@ -15,8 +15,8 @@ export default function Header() {
         <i class="fa-solid fa-list"></i>
         <div class="nav-container">
             <ul>
-                <li class="members" onclick=(initState)><a href="/members.html" class="nav-link">MEMBERS</a></li>
                 <li class="about_us"><a href="/about.html" class="nav-link">ABOUT US</a></li>
+                <li class="members" onclick=(initState)><a href="/members.html" class="nav-link">MEMBERS</a></li>
                 <li class="write_up"><a href="https://blog.kcsc.edu.vn/" target="_blank" class="nav-link">BLOG</a></li>
                 <li class="achievement"><a href="/achievement.html" class="nav-link">ACHIEVEMENT</a></li>
             </ul>

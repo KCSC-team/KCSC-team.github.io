@@ -9,8 +9,8 @@
 }
 
 body {
-    font-family: 'Inconsolata', monospace !important;
-    background-color: #a2214e; 
+    /* font-family: 'Inconsolata', monospace !important; */
+    background-color: #1f1f1f; 
     color: #e0e0e0;
     overflow-x: hidden;
 }
@@ -24,8 +24,8 @@ body {
     position: relative;
     color: var(--white);
     font-size: 4rem;
-    font-family: 'Russo One', sans-serif;
-    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     text-transform: uppercase;
     text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
                 -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
@@ -84,7 +84,8 @@ body {
     border: 2px solid var(--neon-blue);
     color: var(--neon-blue);
     padding: 10px 20px;
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
