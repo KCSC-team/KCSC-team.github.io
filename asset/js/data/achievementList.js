@@ -122,7 +122,7 @@ export default function list() {
         {
           name: "TetCTF2024",
           award: "Giải Nhất",
-          link: "/asset/img/achievement/2024/tetctf.PNG"
+          link: "/asset/img/achievement/2024/Tetctf.png"
         },
         {
           name: "Wolvctf",
@@ -187,7 +187,7 @@ export default function list() {
         {
           name: "BrainHack 2025",
           award: "Top 2",
-          link: "/asset/img/achievement/2025/BrainHack.png"
+          link: "/asset/img/achievement/2025/Brainhack.png"
         },
         {
           name: "FPTU SecAthon",
