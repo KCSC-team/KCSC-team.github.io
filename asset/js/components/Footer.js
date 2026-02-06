@@ -8,8 +8,8 @@ export default function Footer() {
             </div>
             
             <div class="footer-social">
-                <a href="https://www.facebook.com/kmase.club" target="_blank" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://github.com/kcsc-club" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.facebook.com/kmasec.club" target="_blank" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://github.com/KCSC-team/" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
                 <a href="mailto:kmase.club@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
                 <a href="https://www.tiktok.com/@kcscentertainment88" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
                 <a href="https://www.youtube.com/@kmasec1966" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>

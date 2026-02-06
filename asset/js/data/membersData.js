@@ -19,6 +19,22 @@ export default function membersList() {
       slogan: "",
       img: "/asset/img/members/Thay-Tuan.jpg",
     },
+    {
+      gen: "0",
+      name: "Phan Văn Trị",
+      team: "Advisor",
+      role: "Advisor",
+      slogan: "",
+      img: "/asset/img/members/Thay-Tri.jpg",
+    },
+    {
+      gen: "0",
+      name: "Nguyễn Anh Khôi",
+      team: "Advisor",
+      role: "Advisor",
+      slogan: "",
+      img: "/asset/img/members/default.png",
+    },
     // #endregion
 
     // #region FOUNDER
@@ -79,7 +95,7 @@ export default function membersList() {
       team: "CTF",
       role: "WEB EXPLOIT",
       slogan: "",
-      img: "/asset/img/members/"
+      img: "/asset/img/members/Truong-AT8.jpg"
     },
     {
       gen: "1",
@@ -87,7 +103,7 @@ export default function membersList() {
       team: "CTF",
       role: "WEB EXPLOIT",
       slogan: "",
-      img: "/asset/img/members/"
+      img: "/asset/img/members/default.png"
     },
     {
       gen: "1",
@@ -95,7 +111,7 @@ export default function membersList() {
       team: "CTF",
       role: "REVERSE",
       slogan: "Luật nhân quả là khi mình cho đi điều gì thì mất luôn thứ đó :shame:.",
-      img: "/asset/img/members/"
+      img: "/asset/img/members/default.png"
     },
     {
       gen: "1",
@@ -119,7 +135,7 @@ export default function membersList() {
       team: "CTF",
       role: "Web Exploit",
       slogan: "Được mất dương dương người Thái Thượng khen chê phơi phới ngọn Đông Phong.",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "1",
@@ -143,7 +159,7 @@ export default function membersList() {
       team: "CTF",
       role: "Reverse",
       slogan: "You must do working to have something to eat.",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "1",
@@ -191,7 +207,7 @@ export default function membersList() {
       team: "CTF",
       role: "Pwnable",
       slogan: "",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "1",
@@ -279,7 +295,7 @@ export default function membersList() {
       team: "CTF",
       role: "Web Exploit",
       slogan: "",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "1",
@@ -287,7 +303,7 @@ export default function membersList() {
       team: "CTF",
       role: "Web Exploit",
       slogan: "",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "1",
@@ -338,7 +354,7 @@ export default function membersList() {
       team: "CTF",
       role: "Crypto",
       slogan: "",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "2",
@@ -346,7 +362,7 @@ export default function membersList() {
       team: "CTF",
       role: "Forensics",
       slogan: "Nỗ lực hết mình vì sự an toàn của bạn - arigatou gozaimasu",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "2",
@@ -354,7 +370,7 @@ export default function membersList() {
       team: "CTF",
       role: "Web Exploit",
       slogan: "Run or die",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "2",
@@ -450,7 +466,7 @@ export default function membersList() {
       team: "Media",
       role: "Content Creator",
       slogan: "Mình tự do do tự mình",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "2",
@@ -548,7 +564,7 @@ export default function membersList() {
       name: "taiwhis",
       team: "CTF",
       role: "Web Exploit",
-      slogan: "In your eyes, I see a W.E.B - Wonderland, Enchantment, Belonging",
+      slogan: "NểXo number 1",
       img: "/asset/img/members/Tai-AT17.jpg",
     },
     {
@@ -597,7 +613,7 @@ export default function membersList() {
       team: "CTF",
       role: "Crypto",
       slogan: "",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "3",
@@ -661,7 +677,7 @@ export default function membersList() {
       team: "CTF",
       role: "Pwnable",
       slogan: "",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "3",
@@ -669,7 +685,7 @@ export default function membersList() {
       team: "CTF",
       role: "Forensics",
       slogan: "",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "3",
@@ -757,7 +773,7 @@ export default function membersList() {
       team: "CTF",
       role: "Web Exploit",
       slogan: "diff",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "3",
@@ -813,7 +829,7 @@ export default function membersList() {
       team: "CTF",
       role: "Pwnable",
       slogan: "",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "3",
@@ -861,7 +877,7 @@ export default function membersList() {
       team: "CTF",
       role: "Pwnable",
       slogan: "pwning 25 hours per day",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "3",
@@ -1088,7 +1104,7 @@ export default function membersList() {
       team: "CTF",
       role: "Web Exploit",
       slogan: "",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "4",
@@ -1136,7 +1152,7 @@ export default function membersList() {
       team: "Media",
       role: "Content Creator",
       slogan: "",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "4",
@@ -1152,7 +1168,7 @@ export default function membersList() {
       team: "Media",
       role: "Content Creator",
       slogan: "Try your best !!!",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "4",
@@ -1176,7 +1192,7 @@ export default function membersList() {
       team: "CTF",
       role: "Forensics",
       slogan: "Siuuuuuuu",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "4",
@@ -1184,7 +1200,7 @@ export default function membersList() {
       team: "CTF",
       role: "Pwnable",
       slogan: "...",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "4",
@@ -1192,7 +1208,7 @@ export default function membersList() {
       team: "CTF",
       role: "Forensics",
       slogan: "just haaju",
-      img: "/asset/img/members/",
+      img: "/asset/img/members/default.png",
     },
     {
       gen: "4",
