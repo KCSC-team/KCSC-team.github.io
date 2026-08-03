@@ -1152,7 +1152,7 @@ export default function membersList() {
       team: "Media",
       role: "Content Creator",
       slogan: "",
-      img: "/asset/img/members/default.png",
+      img: "/asset/img/members/Ha-AT21N.png",
     },
     {
       gen: "4",
