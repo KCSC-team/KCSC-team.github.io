@@ -1151,7 +1151,7 @@ export default function membersList() {
       name: "Hà Mã tấu .-.",
       team: "Media",
       role: "Content Creator",
-      slogan: "",
+      slogan: "Sống như những đoá hoa .-.",
       img: "/asset/img/members/Ha-AT21N.png",
     },
     {
