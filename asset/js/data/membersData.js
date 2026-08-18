@@ -5,7 +5,7 @@ export default function membersList() {
     // #region Advisors
     {
       gen: "0",
-      name: "Hoàng Đức Thọ",
+      name: "TS. Hoàng Đức Thọ",
       team: "Advisor",
       role: "Advisor",
       slogan: "",
@@ -13,7 +13,7 @@ export default function membersList() {
     },
     {
       gen: "0",
-      name: "Lại Minh Tuấn",
+      name: "TS. Lại Minh Tuấn",
       team: "Advisor",
       role: "Advisor",
       slogan: "",
@@ -21,7 +21,7 @@ export default function membersList() {
     },
     {
       gen: "0",
-      name: "Phan Văn Trị",
+      name: "TS. Phan Văn Trị",
       team: "Advisor",
       role: "Advisor",
       slogan: "",
@@ -29,7 +29,7 @@ export default function membersList() {
     },
     {
       gen: "0",
-      name: "Nguyễn Anh Khôi",
+      name: "Ths. Nguyễn Anh Khôi",
       team: "Advisor",
       role: "Advisor",
       slogan: "",
